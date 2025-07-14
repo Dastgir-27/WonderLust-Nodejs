@@ -1,0 +1,147 @@
+<style>
+        .filters{
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 2rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+        .filter{
+            color: #000;
+            text-decoration: none;
+            text-align: center;
+            margin-right: 2rem;
+            opacity: 0.7;
+        }
+        .filter p {
+            font-size: 0.8rem;
+        }
+        .filter:hover{
+            color: #fe424d;
+            opacity: 1; 
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        .tax-info{
+            display: none;
+        }
+        .tax-switch{
+            border: 1px solid black;
+            border-radius: 1rem;
+            margin-left: 5rem;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin-top: -1.5rem;
+            height: 3.25rem;
+        }
+
+@media (max-width: 600px) {
+  .filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+  }
+
+  .filter {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .tax-switch {
+    flex: 0 0 73%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 992px) { 
+  .filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+  }
+
+  .filter {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .tax-switch {
+    flex: 0 0 55%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1394px) { 
+     .filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+  }
+
+  .filter {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .tax-switch {
+    flex: 0 0 30%;
+    justify-content: center;
+  }
+}
+</style>
+    <div class="filters ">
+        <a href="/search?categories=Trending" class="filter ">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </a>
+        <a href="/search?categories=Rooms" class="filter filter-hide">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </a>
+        <a href="/search?categories=Iconic%20Cities" class="filter filter-hide">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic Cities</p>
+        </a>
+        <a href="/search?categories=Mountians" class="filter filter-hide filter-hide2">
+            <div><i class="fa-solid fa-mountain-sun"></i></div>
+            <p>Mountians</p>
+        </a>
+        <a href="/search?categories=Castles" class="filter filter-hide filter-hide2">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Castles</p>
+        </a>
+        <a href="/search?categories=Amazing%20Pools" class="filter filter-hide filter-hide2">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </a>
+        <a href="/search?categories=Camping" class="filter filter-hide filter-hide2">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </a>
+        <a href="/search?categories=Farms" class="filter filter-hide filter-hide2">
+            <div><i class="fa-solid fa-tractor"></i></div>
+            <p>Farms</p>
+        </a>
+        <a href="/search?categories=Arctic" class="filter filter-hide">
+            <div><i class="fa-solid fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </a>
+        <a href="/search?categories=Domes" class="filter filter-hide filter-hide2">
+            <div><i class="fa-solid fa-igloo"></i></div>
+            <p>Domes</p>
+        </a>
+        <a href="/search?categories=Boats" class="filter filter-hide">
+            <div><i class="fa-solid fa-ship"></i></div>
+            <p>Boats</p>
+        </a>
+        <div class="tax-switch gap-2"> 
+            <label for="flexSwitchCheckDefault">Display total after taxes</label>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            </div>
+        </div>
+    </div>
