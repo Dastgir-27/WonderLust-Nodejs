@@ -83,7 +83,11 @@ module.exports.updateListing = async (req,res) => {
         let lon;
         const geocodingAPI = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(req.body.listing.location)}&format=json`;
         try {
-            const res = await fetch(geocodingAPI);
+            const res = await fetch(geocodingAPI, {
+            headers: {
+                "User-Agent": "WonderLust/1.0 (dastgiridrisi27@gmail.com)"
+            }
+            });
             const data = await res.json();
             if (data.length > 0) {
                 lat = data[0].lat;
