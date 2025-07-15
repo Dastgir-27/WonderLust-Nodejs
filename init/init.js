@@ -33,7 +33,7 @@ const coordinatesMap = {
 };
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/wonderlust");
+  await mongoose.connect("mongodb+srv://dastgir-27:eDPnFA8QtZfeElfi@cluster0.wttymld.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 }
 main()
   .then(() => console.log("Connected to DB"))
@@ -49,7 +49,7 @@ const initDB = async () => {
       ...obj,
       categories: "Trending",
       geometry: { type: "Point", coordinates: coords },
-      owner: "6859328660ea18f934af70a6"
+      owner: "68765251dac546a6771f7723"
     };
   });
 
@@ -58,47 +58,47 @@ const initDB = async () => {
 };
 initDB();
 
-//    const updates = [
-//     { title: "Ski Chalet in Aspen", category: "Boats" },
-//     { title: "Secluded Beach House in Costa Rica", category: "Castles" },//
-//     { title: "Cozy Beachfront Cottage", category: "Boats" },
-//     { title: "Modern Loft in Downtown", category: "Boats" },
-//     { title: "Juhu Beach", category: "Trending" },
-//     { title: "Mountain Retreat" , category: "Iconic Cities"},
-//     { title: "Historic Villa in Tuscany" , category: "Rooms"},
-//     { title: "Secluded Treehouse Getaway" , category: "Amazing Pools"},
-//     { title: "Beachfront Paradise" , category: "Amazing Pools"},
-//     { title: "Rustic Cabin by the Lake" , category: "Mountians"},
-//     { title: "Luxury Penthouse with City Views" , category: "Iconic Cities"},
-//     { title: "Ski-In/Ski-Out Chalet" , category: "Boats"},
-//     { title: "Safari Lodge in the Serengeti" , category: "Arctic"},
-//     { title: "Historic Canal House" , category: "Camping"},
-//     { title: "Private Island Retreat" , category: "Castles"},
-//     { title: "Charming Cottage in the Cotswolds" , category: "Iconic Cities"},
-//     { title: "Historic Brownstone in Boston", category: "Trending" },
-//     { title: "Beachfront Bungalow in Bali", category: "Camping" },
-//     { title: "Mountain View Cabin in Banff", category: "Domes" },
-//     { title: "Art Deco Apartment in Miami", category: "Arctic" },
-//     { title: "Tropical Villa in Phuket", category: "Rooms" },
-//     { title: "Historic Castle in Scotland", category: "Trending" },
-//     { title: "Desert Oasis in Dubai", category: "Iconic Cities" },
-//     { title: "Rustic Log Cabin in Montana", category: "Farms" },
-//     { title: "Beachfront Villa in Greece", category: "Castles" },
-//     { title: "Eco-Friendly Treehouse Retreat", category: "Iconic Cities" },
-//     { title: "Historic Cottage in Charleston", category: "Rooms" },
-//     { title: "Modern Apartment in Tokyo", category: "Iconic Cities" },
-//     { title: "Lakefront Cabin in New Hampshire", category: "Camping" },
-//     { title: "Luxury Villa in the Maldives", category: "Trending" },
-//   ];
+   const updates = [
+    { title: "Ski Chalet in Aspen", category: "Boats" },
+    { title: "Secluded Beach House in Costa Rica", category: "Castles" },//
+    { title: "Cozy Beachfront Cottage", category: "Boats" },
+    { title: "Modern Loft in Downtown", category: "Boats" },
+    { title: "Juhu Beach", category: "Trending" },
+    { title: "Mountain Retreat" , category: "Iconic Cities"},
+    { title: "Historic Villa in Tuscany" , category: "Rooms"},
+    { title: "Secluded Treehouse Getaway" , category: "Amazing Pools"},
+    { title: "Beachfront Paradise" , category: "Amazing Pools"},
+    { title: "Rustic Cabin by the Lake" , category: "Mountians"},
+    { title: "Luxury Penthouse with City Views" , category: "Iconic Cities"},
+    { title: "Ski-In/Ski-Out Chalet" , category: "Boats"},
+    { title: "Safari Lodge in the Serengeti" , category: "Arctic"},
+    { title: "Historic Canal House" , category: "Camping"},
+    { title: "Private Island Retreat" , category: "Castles"},
+    { title: "Charming Cottage in the Cotswolds" , category: "Iconic Cities"},
+    { title: "Historic Brownstone in Boston", category: "Trending" },
+    { title: "Beachfront Bungalow in Bali", category: "Camping" },
+    { title: "Mountain View Cabin in Banff", category: "Domes" },
+    { title: "Art Deco Apartment in Miami", category: "Arctic" },
+    { title: "Tropical Villa in Phuket", category: "Rooms" },
+    { title: "Historic Castle in Scotland", category: "Trending" },
+    { title: "Desert Oasis in Dubai", category: "Iconic Cities" },
+    { title: "Rustic Log Cabin in Montana", category: "Farms" },
+    { title: "Beachfront Villa in Greece", category: "Castles" },
+    { title: "Eco-Friendly Treehouse Retreat", category: "Iconic Cities" },
+    { title: "Historic Cottage in Charleston", category: "Rooms" },
+    { title: "Modern Apartment in Tokyo", category: "Iconic Cities" },
+    { title: "Lakefront Cabin in New Hampshire", category: "Camping" },
+    { title: "Luxury Villa in the Maldives", category: "Trending" },
+  ];
 
 
-// const UpdateCategories = async () => {
-//   for (const update of updates) {
-//     await Listing.updateOne(
-//       { title: update.title },
-//       { $set: { categories: update.category } }
-//     );
-//     console.log(`Updated ${update.title} with category ${update.category}`);
-//   }
-// };
-// UpdateCategories();
+const UpdateCategories = async () => {
+  for (const update of updates) {
+    await Listing.updateOne(
+      { title: update.title },
+      { $set: { categories: update.category } }
+    );
+    console.log(`Updated ${update.title} with category ${update.category}`);
+  }
+};
+UpdateCategories();
