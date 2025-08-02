@@ -89,6 +89,11 @@ app.use("/listing", listingRouter);
 app.use("/listing/:id/reviews",reviewRouter);
 //Users
 app.use("/",userRouter);  
+//Privacy and terms
+app.get("/privacy-terms" , (req,res) => {
+    res.send("Unavailable! Just For Project Purpose.");
+});
+
 
 app.all("*",(req,res,next) => {
     next(new expressError(404,"page not found!"));

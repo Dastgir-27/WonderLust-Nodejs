@@ -17,26 +17,4 @@ async function forwardGeocoding() {
 };
 forwardGeocoding();
 
-// Run once when the page loads
-// async function forwardGeocoding() {
-//   if (!placeName) return;
-
-//   const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(placeName)}&format=json`;
-//   try {
-//     const res = await fetch(url);
-//     const data = await res.json();
-
-//     if (data.length > 0) {
-//       const lat = data[0].lat;
-//       const lon = data[0].lon;
-
-      // marker = L.marker([lat, lon]).addTo(map).bindPopup(placeName).openPopup();
-      // map.setView([lat, lon], 13);
-//     } else {
-//       console.error("Location not found.");
-//     }
-//   } catch (err) {
-//     console.error("Geocoding failed:", err);
-//   }
-// };
 
