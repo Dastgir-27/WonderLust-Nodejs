@@ -55,6 +55,58 @@
                 </form>
             </div>
             <% } %>
+            <% if (currUser && String(oneListing.owner._id) !== String(currUser._id)) { %>
+            <!-- Book Now Button -->
+            <div class="btns mt-3">
+                <button type="button" class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                    Book Now
+                </button>
+            </div>
+
+            <!-- Booking Modal -->
+            <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="bookingModalLabel">Book <%= listing.title %></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form method="POST" action="/listing/<%= listing._id %>/book" class="needs-validation" novalidate>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="John Doe" required>
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Name is required</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="john@example.com" required>
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Valid email is required</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" name="phone" class="form-control" id="phone" placeholder="+91 1234567890" required>
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Phone number is required</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="guests" class="form-label">Number of Guests</label>
+                                    <input type="number" name="guests" class="form-control" id="guests" min="1" placeholder="2" required>
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Number of guests is required</div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Send Booking Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <% } %>
         </div>
         <div class="col-8 offset-3 mb-3">
             <% if(currUser){ %>
